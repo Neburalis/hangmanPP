@@ -3,7 +3,7 @@ This is my implementation of the popular game [hangman](https://en.wikipedia.org
 
 The application is developed as a pet project
 # installation and launch
-1) clone the repo `git clone https://github.com/senymama/gallowsPP.git`
+1) clone the repo `git clone https://github.com/senymama/hangmanPP.git`
 2) launch main.py `python3 main.py`
 
 # project structure
