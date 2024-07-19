@@ -1,5 +1,6 @@
-# gallowsPP
-This is my implementation of the popular game hangman 
+# hangmanPP
+This is my implementation of the popular game [hangman](https://en.wikipedia.org/wiki/Hangman_(game)) 
+
 The application is developed as a pet project
 # installation and launch
 1) clone the repo `git clone https://github.com/senymama/gallowsPP.git`
