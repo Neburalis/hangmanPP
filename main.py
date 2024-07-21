@@ -37,32 +37,34 @@ if __name__ == '__main__':
             break
         else:
             continue
-        word = random.choice(words)
+        word = random.choice(words).strip().lower()  # in case the words data is crooked
         # print(word)
         answers = set()
         mask = mask_generate(word)
         stage = 0
         tries = 0
 
-        while stage < len(gallows_stages)-1:
+        while stage < len(gallows_stages) - 1:
             print(gallows_stages[stage].format(mask, answers))
-            letter = input()
+            letter = input().strip().lower()
             tries += 1
-            if letter.lower() == word:
+            if letter == word:
                 print(won_message.format(word, tries))
                 break
             elif len(letter) == 1:
-                answers.add(letter)
-                mask = mask_generate(word)
-                if all_letters_in_set(word, answers):
-                    print(won_message.format(word, tries))
-                    break
+                if letter in answers:  # If you enter the same letter again, it will not be counted as an error.
+                    pass
                 else:
-                    if letter in word:
-                        pass
+                    answers.add(letter)
+                    mask = mask_generate(word)
+                    if all_letters_in_set(word, answers):
+                        print(won_message.format(word, tries))
+                        break
                     else:
-                        stage += 1
+                        if letter in word:
+                            pass
+                        else:
+                            stage += 1
         else:
             print(gallows_stages[stage].format(mask, answers))
             print(lost_message.format(word))
-
